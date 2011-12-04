@@ -29,7 +29,7 @@
    * Library version.
    */
 
-  contemplate.version = '0.0.2';
+  contemplate.version = '0.0.3';
 
 
   /**
