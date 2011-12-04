@@ -1,25 +1,54 @@
-// contemplate.js
-// JavaScript pico template engine library
-//
-// inspired by Microtemplatez
-// Copyright 2011 Addy Osmani
-//
-// Copyright 2011 Enrico Marino
-// MIT license
 
-!function (name, definition) {
-    if (typeof module != 'undefined') module.exports = definition()
-    else if (typeof define == 'function' && define.amd) define(name, definition)
-    else this[name] = definition()
-}('contemplate', function (context, undefined) {
+/*! 
+ * contemplate
+ * JavaScript pico small peta fast template engine
+ * Copyright (c) 2011 Enrico Marino <enrico.marino@email.com>
+ * MIT license
+ */
 
-    return function (tmpl, data) {
-        return tmpl.replace(/{{\s*([a-z0-9_][\.a-z0-9_]*)\s*}}/gi, function (tag, k) {
-            for (var p = k.split("."), len = p.length, i = 0, temp = data; i < len; i += 1) {
-                temp = temp[p[i]];
-            }
-            return temp;
-        });
-    };
+!(function (exports) {
+
+  var regexp = /{{\s*([a-z0-9_][\.a-z0-9_]*)\s*}}/gi;
+
+  /**
+   * Contemplate
+   *
+   * @param {String} template template
+   * @param {Object} data data
+   * @return {String} 
+   * @api private
+   */
+
+  exports.contemplate = function (template, data) {
+    return template.replace(regexp, function (tag, key) { 
+      return find(data, key); 
+    });
+  };
+
+  /**
+   * Library version.
+   */
+
+  contemplate.version = '0.0.2';
+
+
+  /**
+   * Find the property of 'data' located in 'path'
+   *
+   * @param {Object} data data
+   * @param {String} path path of the property to find
+   * @return the property of 'data' located in 'path' 
+   * @api private
+   */
+
+  contemplate.find = function (data, path) {
+    var temp = data;
+
+    path.split('.').forEach(function (part) { 
+      temp = temp[part]; 
+    });
+
+    return temp;
+  }
 
 }(this));
