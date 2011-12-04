@@ -1,7 +1,7 @@
 
 /*! 
  * contemplate
- * JavaScript pico small peta fast template engine
+ * JavaScript pico template engine
  * Copyright (c) 2011 Enrico Marino <enrico.marino@email.com>
  * MIT license
  */

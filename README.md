@@ -1,6 +1,6 @@
 # contemplate
 
-JavaScript pico small peta fast template engine
+JavaScript pico template engine
 
 ## API
 
