@@ -21,7 +21,7 @@
 
   exports.contemplate = function (template, data) {
     return template.replace(regexp, function (tag, key) { 
-      return find(data, key); 
+      return contemplate.find(data, key); 
     });
   };
 
@@ -49,6 +49,6 @@
     });
 
     return temp;
-  }
+  };
 
 }(this));
