@@ -2,7 +2,7 @@
   "author": "Enrico Marino <enrico.marino@email.com> (http://onirame.no.de)",
   "name": "contemplate",
   "description": "JavaScript pico template engine",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "homepage": "https://github.com/onirame/contemplate",
   "repository": {
     "type": "git",
