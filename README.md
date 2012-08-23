@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/onirame/contemplate.png)](http://travis-ci.org/onirame/contemplate)
 # contemplate
 
 JavaScript pico template engine
